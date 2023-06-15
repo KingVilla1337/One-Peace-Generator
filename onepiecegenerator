@@ -1,0 +1,65 @@
+import random
+import tkinter as tk
+from PIL import Image, ImageTk
+
+zitate = [
+    "Ich werde der König der Piraten sein! - Monkey D. Luffy",
+    "Ich werde die Meere überqueren und One Piece finden! - Monkey D. Luffy",
+    "Ich werde die beste Navigatorin werden! - Nami",
+    "Ich werde der stärkste Schwertkämpfer sein! - Roronoa Zoro",
+    "Ich werde der beste Koch werden! - Sanji",
+    "Ich werde die größte Schatzkarte zeichnen! - Nico Robin",
+    "Ich werde der beste Scharfschütze sein! - Usopp",
+    "Ich werde die Weltregierung stürzen! - Monkey D. Dragon",
+    "Ich werde die Meerjungfraueninsel retten! - Fisher Tiger",
+    "Ich werde der König der Piraten! - Monkey D. Ruffy",
+    "Es ist nicht wichtig, wer ich früher war. Es zählt nur, wer ich heute bin. - Trafalgar Law",
+    "Man muss nicht perfekt sein, um etwas Besonderes zu erreichen. - Monkey D. Ruffy",
+    "Die wahren Piraten sterben niemals! - Monkey D. Ruffy",
+    "Ich gebe nicht auf, bis ich die Hölle erreiche! - Portgas D. Ace",
+    "Die schwächsten werden immer laut, um ihre Stärke zu verbergen. - Donquixote Doflamingo",
+    "Ich habe keine Absichten, den Ozean zu erobern. Ich will die ganze Welt beherrschen! - Monkey D. Ruffy",
+    "Es gibt Dinge, für die es sich zu kämpfen lohnt! - Nami",
+    "Das Leben ist wie ein Sturm. Egal wie stark du dich wehrst, er wird dich trotzdem treffen. - Brook",
+    "Menschen, die sich nicht an ihre Kameraden erinnern können, sind schlimmer als Abschaum. - Tony Tony Chopper",
+    "Diejenigen, die das Leben leicht nehmen, können nicht verstehen, wie groß es sein kann. - Nico Robin",
+    "Auch wenn wir uns verlaufen, ist es okay. Denn manchmal verlaufen wir uns, um einen besseren Weg zu finden. - Usopp",
+    "Diejenigen, die nicht mutig genug sind, ihre Träume zu verfolgen, werden denjenigen applaudieren, die es tun. - Monkey D. Ruffy",
+    "Die Narben, die man sich selbst zufügt, heilen schneller als die, die andere einem zufügen. - Portgas D. Ace",
+    "Es gibt Zeiten, in denen Männer weinen. - Whitebeard",
+    "Es ist egal, wer ich bin, ich bin immer noch der Kapitän der Strohhut-Bande! - Monkey D. Ruffy",
+    "Was nützt es, der Welt zu dienen, wenn man dabei seine Seele verliert? - Bartholomew Kuma",
+    "Die Stärke, die du suchst, findest du nicht in der Kraft deiner Faust, sondern in der Stärke deines Willens. - Monkey D. Ruffy",
+    "Ich werde nicht sterben, Partner. - Portgas D. Ace",
+    "Selbst wenn es wehtut, selbst wenn man stirbt, man darf niemals aufgeben. - Monkey D. Ruffy",
+    "Das Schlimmste, was man einem Mann antun kann, ist, ihn aufzugeben. - Jinbei",
+    "Das Leben ist kurz. Tu, was du willst. - Charlotte Linlin (Big Mom)",
+    "Man muss nicht stark sein, um etwas zu schützen. Man muss nur stark genug sein, um es zu versuchen. - Nami",
+    "Der wahre Wert von Menschen liegt nicht im Geld oder im Ruhm, sondern in ihrem Charakter und ihrer Integrität. - Monkey D. Ruffy",
+    "Es gibt keine Grenzen, wenn man seinen Traum verfolgt. - Monkey D. Ruffy"
+]
+
+def zitat_anzeigen():
+    zitat = random.choice(zitate)
+    label.config(text=zitat)
+
+root = tk.Tk()
+root.title("One Piece Zitate-Generator (Eddie Morra)")
+root.geometry("500x200")
+
+# Hintergrundbild laden
+background_image = Image.open("D:/aProject/One Piece Generator/moin.png")
+background_photo = ImageTk.PhotoImage(background_image)
+background_label = tk.Label(root, image=background_photo)
+background_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+# Icon festlegen
+root.iconbitmap("D:/aProject/One Piece Generator/icon.ico")
+
+label = tk.Label(root, text="Klicke auf den Button, um ein Zitat anzuzeigen", font=("Arial", 14))
+label.pack(pady=10)
+
+button = tk.Button(root, text="Zitat anzeigen", command=zitat_anzeigen, font=("Arial", 12))
+button.pack(pady=5)
+
+root.mainloop()
