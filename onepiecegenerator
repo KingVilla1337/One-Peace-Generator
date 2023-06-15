@@ -48,13 +48,13 @@ root.title("One Piece Zitate-Generator (Eddie Morra)")
 root.geometry("500x200")
 
 # Hintergrundbild laden
-background_image = Image.open("D:/aProject/One Piece Generator/moin.png")
+background_image = Image.open("PFAD ZUM HINTERGRUNDBILD")
 background_photo = ImageTk.PhotoImage(background_image)
 background_label = tk.Label(root, image=background_photo)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 # Icon festlegen
-root.iconbitmap("D:/aProject/One Piece Generator/icon.ico")
+root.iconbitmap("PFAD ZU EUREN ICON")
 
 label = tk.Label(root, text="Klicke auf den Button, um ein Zitat anzuzeigen", font=("Arial", 14))
 label.pack(pady=10)
